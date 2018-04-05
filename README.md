@@ -37,3 +37,9 @@ ionic serve
 
  Para visualizar de manera adecuada en el navegador web (Google Chrome) botón derecho -
 inspeccionar y ponga la pantalla en modo dispositivo móvil que desee.
+
+
+Para login:
+
+correo: alfleyza@alfleyza.com 
+contraseña: 123456
