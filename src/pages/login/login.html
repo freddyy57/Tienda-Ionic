@@ -1,0 +1,42 @@
+
+<ion-header>
+
+  <ion-navbar color="tienda">
+    <ion-buttons>
+      <button ion-button
+              (click)="viewCtrl.dismiss(false)">
+         Cerrar
+      </button>
+    </ion-buttons>
+    <ion-title>Login</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-list>
+
+    <ion-item>
+        <ion-label fixed>Correo</ion-label>
+        <ion-input type="email" [(ngModel)]="correo"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Contraseña</ion-label>
+        <ion-input type="password" [(ngModel)]="contrasena"></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+
+    <button ion-button
+            block
+            color="tienda"
+            [disabled]="correo.length < 5 || contrasena.length < 5"
+            (click)="ingresar()">
+      Ingresar
+    </button>
+
+</ion-content>

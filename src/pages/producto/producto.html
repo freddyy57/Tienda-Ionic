@@ -1,0 +1,37 @@
+
+<ion-header>
+
+  <ion-navbar color="tienda">
+    <ion-title>{{item.linea}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <ion-card>
+      <img [src]="item.codigo | imagen"/>
+      <ion-card-content>
+        <ion-card-title text-center>
+          {{item.producto}}
+          </ion-card-title>
+          <hr>
+        <p text-center>
+          {{ item.descripcion }} <br>
+        </p>
+        <hr>
+        <p text-center>
+          <span class="precio" text-center > {{ item.proveedor }} </span> <br>
+          <strong>Precio: </strong> <span class="precio"> {{ item.precio_compra | currency:'EUR':'symbol' }} </span>
+        </p>
+      </ion-card-content>
+    </ion-card>
+    <button ion-button block round icon-left
+            color="tienda"
+            (click)="_cs.agregar_carrito(item)">
+      <ion-icon name="cart"></ion-icon>
+      Agregar al Carrito
+    </button>
+
+</ion-content>

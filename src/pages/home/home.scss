@@ -1,3 +1,51 @@
 page-home {
+  // .col {
+  //   padding: 0px !important;
+  // }
+  // .card-ios {
+  //   margin: 5px !important;
+  // }
+  ion-content {
+    background-color: #000000 !important;
+  }
+  img {
+    max-width: 100%;
+    height: 120px;
+    overflow: hidden;
+    border: 0;
+ }
+
+ .card-ios {
+    margin: 0px;
+    border-radius: 2px;
+    width: calc(100% - 0px);
+    font-size: 1.4rem;
+    background: #000000;
+    -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+ }
+
+ .card-ios p {
+    margin: 0 0 2px;
+    font-size: 1.5rem;
+    color: #ffffff;
+ }
+
+ .card-ios hr {
+     border-top: 1px solid #8cc8f1;
+ }
+
+ .precio {
+   color: #8acbef;
+ }
+
+ .puntero {
+   cursor: pointer;
+ }
+
+ .bar-button-ios[icon-only] {
+    padding: 5px 15px 0 0;
+    min-width: .9em;
+ }
 
 }

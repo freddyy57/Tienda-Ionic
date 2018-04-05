@@ -1,14 +1,51 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="tienda">
+
+    <ion-buttons start>
+      <button ion-button
+              *ngIf="_us.activo()"
+               (click)="_us.cerrar_sesion()">
+        Salir
+      </button>
+    </ion-buttons>
+
     <ion-title>
-      Ionic Blank
+      CompraGangas
     </ion-title>
+
+    <ion-buttons end>
+      <button ion-button icon-only
+              (click)="_cs.ver_carrito()">
+        <ion-icon name="cart"></ion-icon>
+        <ion-badge color="danger"
+                   class="carrito-numero"
+                   *ngIf="_cs.items.length > 0">
+                   {{_cs.items.length}}
+        </ion-badge>
+      </button>
+
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+<ion-content>
+
+  <ion-grid>
+    <ion-row *ngFor="let pares of _ps.productos">
+      <ion-col *ngFor="let item of pares">
+        <ion-card class="puntero" (click)="irDetalle(item)">
+          <img [src]="item.codigo | imagen"/>
+          <p text-center>
+            {{item.producto}} <br>
+           <span class="precio"> {{item.precio_compra | currency:'EUR':'symbol' }} </span>
+          </p>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-infinite-scroll (ionInfinite)="siguiente_pagina($event)">
+     <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
 </ion-content>

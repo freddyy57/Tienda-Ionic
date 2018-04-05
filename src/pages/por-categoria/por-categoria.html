@@ -1,0 +1,47 @@
+
+<ion-header>
+
+  <ion-navbar color="tienda">
+    <ion-title>{{ categoria.linea }}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+
+  <!-- <ion-grid>
+    <ion-row *ngFor="let producto of _ps.por_categorias">
+      <ion-col>
+        <ion-card class="puntero" (click)="irDetalle(producto)">
+          <img [src]="producto.codigo | imagen"/>
+          <p text-center>
+            {{producto.producto}} <br>
+           <span class="precio"> {{producto.precio_compra | currency:'EUR':'symbol' }} </span>
+          </p>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid> -->
+
+  <ion-list>
+    <ion-item color="tabtienda" *ngFor="let producto of _ps.por_categorias">
+      <ion-thumbnail item-start>
+        <img [src]="producto.codigo | imagen"/>
+      </ion-thumbnail>
+
+      <h2>{{producto.producto}}</h2>
+      <p class="precio">{{ producto.proveedor}}</p>
+
+      <button ion-button
+              clear
+              item-right
+              class="precio"
+              (click)="irDetalle(producto)">
+        Ver
+      </button>
+
+    </ion-item>
+  </ion-list>
+
+</ion-content>
